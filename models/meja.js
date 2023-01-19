@@ -14,10 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   meja.init({
+    id_meja:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     nomor_meja: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'meja',
+    tableName: 'meja'
   });
   return meja;
 };

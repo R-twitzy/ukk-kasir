@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   menu.init({
+    id_menu:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     nama_menu: DataTypes.STRING,
     jenis: DataTypes.ENUM("makanan","minuman"),
     deskripsi: DataTypes.STRING,
@@ -22,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'menu',
+    tableName: 'menu'
   });
   return menu;
 };

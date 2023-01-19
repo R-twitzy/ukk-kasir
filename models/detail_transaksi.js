@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   detail_transaksi.init({
+    id_detail:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     id_transaksi: DataTypes.INTEGER,
     id_menu: DataTypes.INTEGER,
     qty: DataTypes.INTEGER,
@@ -21,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'detail_transaksi',
+    tableName: 'detail_transaksi'
   });
   return detail_transaksi;
 };

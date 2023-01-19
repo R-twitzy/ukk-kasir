@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   user.init({
+    id_user:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     nama_user: DataTypes.STRING,
     role: DataTypes.ENUM("admin","kasir","manajer"),
     username: DataTypes.STRING,
@@ -21,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'user',
+    tableName: 'user'
   });
   return user;
 };

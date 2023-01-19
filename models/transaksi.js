@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   transaksi.init({
+    id_transaksi:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
     tgl_transaksi: DataTypes.DATE,
     id_user: DataTypes.INTEGER,
     id_meja: DataTypes.INTEGER,
@@ -22,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'transaksi',
+    tableName: 'transaksi'
   });
   return transaksi;
 };
