@@ -11,6 +11,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      // relasi detail_transaksi -> transaksi
+      // key : id_transaksi
+      // parent : transaksi, child: detail_transaksi
+      // tipe: one to many
+      this.belongsTo(models.transaksi, {
+        foreignKey: "id_transaksi",
+        as: "transaksi"
+      })
+
+      // relasi detail_transaksi -> menu
+      // key : id_menu
+      // parent : menu, child: detail_transaksi
+      // tipe: one to many
+      this.belongsTo(models.menu, {
+        foreignKey: "id_menu",
+        as: "menu"
+      })
+
     }
   }
   detail_transaksi.init({
