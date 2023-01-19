@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    nomor_meja: DataTypes.STRING
+    nomor_meja: DataTypes.STRING,
+    status_meja: DataTypes.ENUM("tersedia","tidak tersedia")
   }, {
     sequelize,
     modelName: 'meja',

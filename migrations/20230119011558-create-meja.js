@@ -12,6 +12,9 @@ module.exports = {
       nomor_meja: {
         type: Sequelize.STRING
       },
+      status_meja: {
+        type: Sequelize.ENUM("tersedia","tidak tersedia")
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
