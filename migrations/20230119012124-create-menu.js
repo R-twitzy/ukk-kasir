@@ -18,7 +18,7 @@ module.exports = {
       deskripsi: {
         type: Sequelize.STRING
       },
-      gambar: {
+      image: {
         type: Sequelize.STRING
       },
       harga: {

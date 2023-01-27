@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     nama_menu: DataTypes.STRING,
     jenis: DataTypes.ENUM("makanan","minuman"),
     deskripsi: DataTypes.STRING,
-    gambar: DataTypes.STRING,
+    image: DataTypes.STRING,
     harga: DataTypes.INTEGER
   }, {
     sequelize,
