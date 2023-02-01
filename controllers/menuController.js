@@ -50,8 +50,7 @@ exports.editDataMenu = async (request, response) => {
         nama_menu: request.body.nama_menu,
         jenis: request.body.jenis,
         deskripsi: request.body.deskripsi,
-        harga: request.body.harga,
-        image: request.file.filename
+        harga: request.body.harga
     }
 
     if(request.file){
