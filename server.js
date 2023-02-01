@@ -7,7 +7,8 @@ app.use(cors())
 app.use(express.static(__dirname))
 
 let routes = [
-    { prefix: `/menu`, route: require(`./routes/menu`)}
+    { prefix: `/menu`, route: require(`./routes/menu`)},
+    { prefix: `/meja`, route: require(`./routes/meja`)}
 ]
 
 for (let i = 0; i < routes.length; i++) {

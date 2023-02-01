@@ -12,27 +12,27 @@ let uploadImage = require("../middlewares/uploadImage")
 
 // endpoint get data menu
 app.get("/", [
-    //authorization.authorization
+    authorization.authorization
 ], 
     menuController.getDataMenu)
 
 // endpoint add data menu
 app.post("/", [
     uploadImage.upload.single(`image`),
-    //authorization.authorization
+    authorization.authorization
 ], 
     menuController.addDataMenu)
 
 // endpoint edit menu
 app.put("/:id_menu", [
     uploadImage.upload.single(`image`),
-    //authorization.authorization
+    authorization.authorization
 ],
     menuController.editDataMenu)
 
 // endpoint delete menu
 app.delete("/:id_menu", [
-    //authorization.authorization
+    authorization.authorization
 ],
     menuController.deleteDataMenu)
 
