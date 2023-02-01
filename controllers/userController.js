@@ -10,10 +10,7 @@ let modeluser = require("../models/index").user
 exports.getDatauser = (request, response) => {
     modeluser.findAll()
     .then(result => {
-        return response.json({
-            Count : result.length,
-            User: result
-        })
+        return response.json(result)
     })
     .catch(error => {
         return response.json({
@@ -33,7 +30,8 @@ exports.findUser = async (request, response) => {
         where: {
             [Op.or]:{
                 username: {[Op.like]: `%${keyword}%`},
-                nama_user: {[Op.like]: `%${keyword}%`}
+                nama_user: {[Op.like]: `%${keyword}%`},
+                role: {[Op.like]: `%${keyword}%`}
             }
         }
     })
@@ -50,6 +48,7 @@ exports.addDatauser = (request, response) => {
         nama_user: request.body.nama_user,
         username: request.body.username,
         password: md5(request.body.password),
+        role: request.body.role,
     }
 
     modeluser.create(newuser)
@@ -71,6 +70,7 @@ exports.editDatauser = (request, response) => {
         nama_user: request.body.nama_user,
         username: request.body.username,
         password: md5(request.body.password),
+        role: request.body.role,
     }
     
     modeluser.update(datauser, {where: {id_user: id}})
