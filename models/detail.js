@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class detail_transaksi extends Model {
+  class detail extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,18 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      // relasi detail_transaksi -> transaksi
+      // relasi detail -> transaksi
       // key : id_transaksi
-      // parent : transaksi, child: detail_transaksi
+      // parent : transaksi, child: detail
       // tipe: one to many
       this.belongsTo(models.transaksi, {
         foreignKey: "id_transaksi",
         as: "transaksi"
       })
 
-      // relasi detail_transaksi -> menu
+      // relasi detail -> menu
       // key : id_menu
-      // parent : menu, child: detail_transaksi
+      // parent : menu, child: detail
       // tipe: one to many
       this.belongsTo(models.menu, {
         foreignKey: "id_menu",
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   }
-  detail_transaksi.init({
+  detail.init({
     id_detail:{
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -44,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
     total: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'detail_transaksi',
-    tableName: 'detail_transaksi'
+    modelName: 'detail',
+    tableName: 'detail'
   });
-  return detail_transaksi;
+  return detail;
 };

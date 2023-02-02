@@ -11,6 +11,7 @@ let routes = [
     { prefix: `/meja`, route: require(`./routes/meja`)},
     { prefix: `/user`, route: require(`./routes/user`)},
     { prefix: `/transaksi`, route: require(`./routes/transaksi`)},
+    { prefix: `/detail`, route: require(`./routes/detail`)},
 ]
 
 for (let i = 0; i < routes.length; i++) {
