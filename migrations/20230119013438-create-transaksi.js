@@ -32,7 +32,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.ENUM("belum_bayar","lunas")
+        type: Sequelize.ENUM("belum_bayar","lunas","selesai")
       },
       createdAt: {
         allowNull: false,
