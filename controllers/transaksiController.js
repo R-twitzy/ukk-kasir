@@ -17,6 +17,10 @@ exports.addDataTransaksi = (request, response) => {
     // tampung data request
     let newTransaksi = {
         tgl_transaksi: request.body.tgl_transaksi,
+        id_user: request.body.id_user,
+        id_meja: request.body.id_meja,
+        nama_pelanggan: request.body.nama_pelanggan,
+        status: request.body.status,
     }
 
     modelTransaksi.create(newTransaksi)
@@ -36,6 +40,10 @@ exports.editDataTransaksi = (request, response) => {
     let id = request.params.id_transaksi
     let dataTransaksi = {
         tgl_transaksi: request.body.tgl_transaksi,
+        id_user: request.body.id_user,
+        id_meja: request.body.id_meja,
+        nama_pelanggan: request.body.nama_pelanggan,
+        status: request.body.status,
     }
     
     modelTransaksi.update(dataTransaksi, {where: {id_transaksi: id}})
