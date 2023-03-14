@@ -11,6 +11,9 @@ let authorization = require("../middlewares/authorization")
 // endpoint get data transaksi
 app.get("/", authorization.authorization, transaksiController.getDataTransaksi)
 
+// endpoint get data transaksi
+app.post("/tgl", authorization.authorization, transaksiController.filterTgl)
+
 // endpoint add data transaksi
 app.post("/", authorization.authorization, transaksiController.addDataTransaksi)
 

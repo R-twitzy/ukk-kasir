@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       // relasi transaksi -> user
       // key : id_user
       // parent : user, child: transaksi
-      // tipe: one to many
+      // tipe: one to one
       this.belongsTo(models.user, {
         foreignKey: "id_user",
         as: "user"
@@ -24,10 +24,19 @@ module.exports = (sequelize, DataTypes) => {
       // relasi transaksi -> meja
       // key : id_meja
       // parent : meja, child: transaksi
-      // tipe: one to many
+      // tipe: one to one
       this.belongsTo(models.meja, {
         foreignKey: "id_meja",
         as: "meja"
+      })
+
+      // relasi transaksi -> meja
+      // key : id_meja
+      // parent : meja, child: transaksi
+      // tipe: one to many
+      this.hasMany(models.detail, {
+        foreignKey: "id_transaksi",
+        as: "detail"
       })
 
     }
